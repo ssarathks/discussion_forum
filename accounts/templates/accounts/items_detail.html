@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load bootstrap3%}
+{% block content%}
+  <div class="jumbotron">
+    <h2>{{items.name}}</h2>
+    <h5>Item Catogory:{{items.category}}</h5>
+    <h5>Posted by :{{items.user.username}}</h5>
+    <h5>branch: {{items.user.details.branch}}</h5>
+    <h5>semester: {{items.user.details.semester}}</h5>
+  </div>
+{% endblock%}

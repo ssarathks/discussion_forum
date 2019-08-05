@@ -1,0 +1,36 @@
+.img1{
+  background-image: url("/static/images/3.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+.img2{
+  background-image: url("/static/images/4.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.discussion_content{
+  margin: auto;
+  font-size: 30px;
+  color: white;
+}
+#discussion_button{
+  width: 100%;
+  font-size: 20px;
+}
+.discussion_button_div{
+  margin: auto;
+  margin-bottom: 10;
+}

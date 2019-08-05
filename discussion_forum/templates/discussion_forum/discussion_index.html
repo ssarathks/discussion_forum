@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% block content%}
+<div class="container thread_heading centered">
+  <h2>Here goes the Discussion in RIT. Be a part of the discussion</h2>
+</div>
+<br>
+{% for thread in threads %}
+  {% if thread.approved_thread %}
+  <a href="{% url 'discussion_forum:thread_detail' pk=thread.pk%}">
+    <div class="container hover_shadow">
+      <div class="col-sm-4">
+        <h1>{{thread.name}}</h1>
+      </div>
+      <div class="thread_description_div col-sm-8">
+        <h3 class="">{{thread.description}}</h3>
+      </div>
+      <div class="col-sm-12">
+        Created By : {{thread.user.username}} &nbspOn : {{thread.created_time}},
+        <p>Comments : {{thread.comments.count}}</p>
+      </div>
+    </div>
+  </a>
+  <hr>
+  {% endif%}
+{% endfor%}
+<div class="container">
+  <a href="{% url 'discussion_forum:create_thread'%}" class="btn btn-primary col-sm-12">Create New Thread</a>
+</div>
+{% endblock%}

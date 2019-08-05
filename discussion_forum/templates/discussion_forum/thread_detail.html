@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% load bootstrap3%}
+{% block content%}
+  <div class="container thread_description_div thread_heading">
+    <h3>Thread Name:{{thread.name}}</h3>
+    <h4>Description:{{thread.description}}</h4>
+    {{thread.comments.count}}Comment
+  </div>
+  <br>
+  {% if thread.comments.count == 0%}
+    <h3>No Comments Yet!</h3>
+  {% else%}
+  {% for comment in thread.comments.all%}
+    <div class="container">
+      <p>{{comment.comment}}</p>
+      By:{{comment.thread.user.username}}
+      <p>Commented On: {{comment.created_time}}</p>
+      {% if comment.thread.user.username == user.username%}
+        <a href="#" class="btn btn-primary">{{comment.thread.user.username}}</a>
+      {% endif%}
+    </div>
+    <hr>
+  {% endfor%}
+  {% endif%}
+
+    <a href="{% url 'discussion_forum:create_comment' pk=thread.pk%}" class="btn btn-primary col-sm-12">Add Comment</a>
+
+{% endblock%}

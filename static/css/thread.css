@@ -1,0 +1,19 @@
+.centered{
+  text-align: center;
+}
+.hover_shadow:hover{
+  box-shadow: 1px 1px 10px grey;
+}
+.thread_description_div{
+  border-left: 2px solid black;
+}
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+.thread_heading{
+  background-color: rgba(194, 252, 255, 0.2);
+}
+.block{
+
+}
